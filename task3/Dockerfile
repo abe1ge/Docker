@@ -18,6 +18,7 @@ RUN git clone git://github.com/dasanjos/java-WebServer
 WORKDIR /opt/java-WebServer/
 RUN mvn clean package
 WORKDIR target
-
+#Expose file
+EXPOSE 8080:8080
 #run this command once the container runs 
 ENTRYPOINT  java -jar java-WebServer-0.1-jar-with-dependencies.jar 
