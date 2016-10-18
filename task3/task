@@ -1,0 +1,4 @@
+Task 3 – Create your own Dockerfile
+You should now look into how to make your own Dockerfile. Your task is to deploy a web application within a virtualised container using the base ubuntu image.
+
+What should be in the file? What order should each instruction be in? That’s for you to work out.
