@@ -24,7 +24,6 @@ RUN sed -i '/jira.home =/c\jira.home = \/var\/jira' jira-application.properties
 
 WORKDIR /opt/atlassian-jira-6.4.2-standalone/bin/
 
-RUN ./start-jira.sh
 
-CMD echo "finished"
+ENTRYPOINT ./start-jira.sh && bash
 
