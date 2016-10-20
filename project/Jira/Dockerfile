@@ -19,8 +19,8 @@ RUN sudo tar -xvzf atlassian-jira-6.4.2.tar.gz
 #configuration
 RUN sudo mkdir /var/jira
 
-
-RUN sed -i '/jira.home =/c\jira.home = \/var\/jira' atlassian-jira/WEB-INF/classes/jira-application.properties
+WORKDIR /opt/atlassian-jira-6.4.2-standalone/atlassian-jira/WEB-INF/classes/
+RUN sed -i '/jira.home =/c\jira.home = \/var\/jira' jira-application.properties
 
 CMD echo "finished"
 
