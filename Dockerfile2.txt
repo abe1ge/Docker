@@ -1,0 +1,62 @@
+FROM ubuntu:14.04
+
+#Always update your running system
+RUN sudo apt-get update -y
+
+#You may or may not need to run these commands
+RUN sudo apt-get install -y wget
+RUN sudo apt-get install -y tar
+
+#Create the directory to install java too.
+RUN sudo mkdir /opt/jdk
+
+#Check what directory you're currently in.
+RUN pwd
+
+#obtain the .tar.gz file from the link below, and download it to the specified directory.
+RUN sudo wget http://aaronmulholland.co.uk/jdk-8u45-linux-x64.tar.gz -P /opt/jdk
+
+#Change Directories to the java jdk directory.
+WORKDIR /opt/jdk
+
+#And check that that worked
+RUN sudo pwd
+
+#See that the file has downloaded correctly.
+RUN sudo ls -a
+
+#extract the archive file
+RUN sudo tar zxvf jdk-8u45-linux-x64.tar.gz
+
+#Manually install java
+RUN sudo update-alternatives --install /usr/bin/java java /opt/jdk/jdk1.8.0_45/bin/java 100
+RUN sudo update-alternatives --install /usr/bin/java java /opt/jdk/jdk1.8.0_45/bin/javac 100
+
+#Check if it installed correctly.
+RUN java -version
+
+#Now install the Java Compiler
+RUN sudo apt-get install -y openjdk-7-jdk
+
+#Install Git
+RUN sudo apt-get install -y git
+
+#Create user, set up area
+RUN export uid=1000 gid=1000 && \
+    mkdir -p /home/developer && \
+    echo "developer:x:${uid}:${gid}:Developer,,,:/home/developer:/bin/basho" >> /etc/passwd && \
+    echo "developer:x:${uid}:" >> /etc/group && \
+    echo "developer ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/developer && \
+    chmod 0440 /etc/sudoers.d/developer && \
+    chown ${uid}:${gid} -R /home/developer
+
+#Use developer and set working directory
+USER developer
+ENV HOME /home/developer
+WORKDIR /home/developer
+
+#Obtain your Git Directory etc.
+RUN sudo git clone https://github.com/ajmulhollan1/Calc
+WORKDIR /home/developer/Calc/src
+RUN sudo javac *.java
+CMD java -classpath . Program
