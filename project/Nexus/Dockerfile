@@ -18,6 +18,7 @@ WORKDIR /opt/
 RUN wget http://download.sonatype.com/nexus/3/nexus-3.0.2-02-unix.tar.gz
 RUN sudo tar -zxvf nexus-3.0.2-02-unix.tar.gz
 RUN sudo ln -s nexus-3.0.2-02 nexus
+RUN sed -i "/run_as_user=''/c\run_as_user='root'" nexus/bin/nexus
 WORKDIR /
 RUN sudo ln -s /opt/nexus/bin/nexus /etc/init.d/nexus
 
