@@ -10,8 +10,10 @@ RUN apt-get update
 #RUN debconf-set-selections <<< 'mysql-server mysql-server/root_password password zabbix'
 #RUN  debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password zabbix'
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y zabbix-server-mysql php5-mysql zabbix-frontend-php
-
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y zabbix-server-mysql 
+# php5-mysql zabbix-frontend-php
+RUN apt-get install -y php5-mysql
+RUN apt-get install -y zabbix-frontend-php 
 #RUN sed -i "/#DBPassword=''/c\DBPassword=zabbix" /etc/zabbix/zabbix_server.conf
 
 WORKDIR /usr/share/zabbix-server-mysql/
