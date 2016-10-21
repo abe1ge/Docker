@@ -29,10 +29,19 @@ RUN service mysql start\
 RUN sed -i "/post_max_size = 8M/c\post_max_size = 16M" /etc/php5/apache2/php.ini
 RUN sed -i "/max_execution_time =/c\max_execution_time = 300" /etc/php5/apache2/php.ini
 RUN sed -i "/max_input_time = 30/c\max_input_time = 300" /etc/php5/apache2/php.ini
-RUN sed -i "/;date.timezone = 60/c\date.timezone = UTC" /etc/php5/apache2/php.ini
+RUN sed -i "/;date.timezone =/c\date.timezone = UTC" /etc/php5/apache2/php.ini
 
 RUN cp /usr/share/doc/zabbix-frontend-php/examples/zabbix.conf.php.example /etc/zabbix/zabbix.conf.php
 
-ENTRYPOINT service zabbix-server start && bash
+RUN sed -i -e 's/zabbix_password//g' /etc/zabbix/zabbix.conf.php
+
+RUN cp /usr/share/doc/zabbix-frontend-php/examples/apache.conf /etc/apache2/conf-available/zabbix.conf
+RUN a2enconf zabbix.conf
+RUN service apache2 reload
+RUN service apache2 restart
+
+RUN sed -i -e 's/no/yes/g' /etc/default/zabbix-server
+
+ENTRYPOINT service mysql start && service zabbix-server start && bash
 
 
