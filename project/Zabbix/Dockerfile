@@ -17,13 +17,13 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install zabbix-server-mysql php5-mysq
 WORKDIR /usr/share/zabbix-server-mysql/
 RUN gunzip *.gz
 
-RUN /etc/init.d/mysql restart
-RUN mysql service start && mysql -u root -e "'zabbix'@'localhost' identified by '';\
+RUN mysql service start 
+&& mysql -u root -e "create user 'zabbix'@'localhost' identified by '';\
 && mysql -u root -e "create database zabbix;\
 && mysql -u root -e "grant all privileges on zabbix.* to 'zabbix'@'localhost';"\
 && mysql -u root -e  "flush privileges;"\
-&& mysql -u zabbix -p zabbix < schema.sql\
-&& mysql -u zabbix -p zabbix < data.sql
+&& mysql -u zabbix  zabbix < schema.sql\
+&& mysql -u zabbix  zabbix < data.sql
 
 RUN sed -i "/post_max_size =/c\post_max_size = 16M" /etc/php5/apache2/php.ini
 RUN sed -i "/max_execution_time =/c\max_execution_time = 300" /etc/php5/php.ini
