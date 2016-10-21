@@ -37,11 +37,13 @@ RUN sed -i -e 's/zabbix_password//g' /etc/zabbix/zabbix.conf.php
 
 RUN cp /usr/share/doc/zabbix-frontend-php/examples/apache.conf /etc/apache2/conf-available/zabbix.conf
 RUN a2enconf zabbix.conf
-RUN service apache2 reload
+
+#RUN service apache2 reload
+
 RUN service apache2 restart
 
 RUN sed -i -e 's/no/yes/g' /etc/default/zabbix-server
 
-ENTRYPOINT service mysql start && service zabbix-server start && bash
+ENTRYPOINT service apache2 start && service mysql start && service zabbix-server start && bash
 
 
