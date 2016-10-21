@@ -26,10 +26,10 @@ RUN service mysql start\
 && mysql -u zabbix  zabbix < images.sql\
 && mysql -u zabbix  zabbix < data.sql
 
-RUN sed -i "/post_max_size =/c\post_max_size = 16M" /etc/php5/apache2/php.ini
-RUN sed -i "/max_execution_time =/c\max_execution_time = 300" /etc/php5/php.ini
-RUN sed -i "/max_input_time =/c\max_input_time = 300" /etc/php5/php.ini
-RUN sed -i "/;date.timezone =/c\date.timezone = UTC" /etc/php5/php.ini
+RUN sed -i "/post_max_size = 8M/c\post_max_size = 16M" /etc/php5/apache2/php.ini
+RUN sed -i "/max_execution_time =/c\max_execution_time = 300" /etc/php5/apache2/php.ini
+RUN sed -i "/max_input_time = 30/c\max_input_time = 300" /etc/php5/apache2/php.ini
+RUN sed -i "/;date.timezone = 60/c\date.timezone = UTC" /etc/php5/apache2/php.ini
 
 RUN cp /usr/share/doc/zabbix-frontend-php/examples/zabbix.conf.php.example /etc/zabbix/zabbix.conf.php
 
