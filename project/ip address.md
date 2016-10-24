@@ -1,6 +1,6 @@
 ntn: 52.212.124.65
 academy
-abel: 52.31.46.88
+abel: 52.211.27.160
 
 sudo usermod -aG docker ubuntu
 
