@@ -1,0 +1,42 @@
+version: '2'
+
+services:
+  jenkins: 
+    build:
+      context: ../Jenkins  
+      dockerfile: Dockerfile
+    ports:
+        - 8080:8080
+    tty: true
+
+  jira:
+    build:
+      context: ../Jira
+      dockerfile: Dockerfile
+    ports:
+        - 8081:8080
+    tty: true
+
+  nexus:
+    build:
+      context: ../Nexus 
+      dockerfile: Dockerfile
+    ports:
+        - 8082:8081
+    tty: true
+
+  zabbix:
+    build:
+      context: ../Zabbix
+      dockerfile: Dockerfile
+    ports:
+        - 80:80
+    tty: true
+
+  zabbixagent:
+    build:
+      context: ../zabbixAgent
+      dockerfile: Dockerfile
+    ports:
+        - 10050:10050
+    tty: true
