@@ -46,6 +46,12 @@ RUN service apache2 restart
 
 RUN sed -i -e 's/no/yes/g' /etc/default/zabbix-server
 
-ENTRYPOINT service apache2 start && service mysql start && service zabbix-server start && bash
+#install agent on the server
+RUN apt-get update
+RUN apt-get install zabbix-agent -y
+
+
+
+ENTRYPOINT service apache2 start && service mysql start && service zabbix-server start && service zabbix-agent start && bash
 
 
