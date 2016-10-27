@@ -19,33 +19,33 @@ services:
     tty: true
     container_name: DC_Jira
 
-  nexus:
-    build:
-      context: ../Nexus 
-      dockerfile: Dockerfile
-    ports:
-        - "8082:8081"
-    tty: true
-    container_name: DC_Nexus
-
-  zabbix:
-    build:
-      context: ../Zabbix
-      dockerfile: Dockerfile
-    ports:
-        - "80:80"   
-        - "10051:10051"
-    tty: true
-    container_name: DC_Zabbix
-
-  zabbixagent:
-    build:
-      context: ../zabbixAgent
-      dockerfile: Dockerfile
-    ports:
-        - "10050:10050"
-    tty: true
-    container_name: DC_Zabbix_Agent
+#  nexus:
+#    build:
+#      context: ../Nexus 
+#      dockerfile: Dockerfile
+#    ports:
+#        - "8082:8081"
+#    tty: true
+#    container_name: DC_Nexus
+#
+#  zabbix:
+#    build:
+#      context: ../Zabbix
+#      dockerfile: Dockerfile
+#    ports:
+#        - "80:80"   
+#        - "10051"
+#    tty: true
+#    container_name: DC_Zabbix
+#
+#  zabbixagent:
+#    build:
+#      context: ../zabbixAgent
+#      dockerfile: Dockerfile
+#    ports:
+#        - "10050:10050"
+#    tty: true
+#    container_name: DC_Zabbix_Agent
 #    entrypoint: 
 #             - /bin/sh
 #             - -c
