@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-Maintainer "abel" abe1ge@github.com
+MAINTAINER "abel" abe1ge@github.com
 
 RUN apt-get update
 
