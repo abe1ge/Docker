@@ -19,7 +19,9 @@ I was tasked with creating an environment that would launch Jenkins, Jira, Nexus
 
 jira.home =/var/jira 
 
-docker rmi the_image
+<h1><b> removing images and containers </b></h1>
+
+	docker rmi the_image
 However, if you need to remove multiple you could use:
 
 Remove all images
