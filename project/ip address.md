@@ -19,22 +19,29 @@ I was tasked with creating an environment that would launch Jenkins, Jira, Nexus
 
 jira.home =/var/jira 
 
-<h1><b> removing images and containers </b></h1>
-
-	docker rmi the_image
-However, if you need to remove multiple you could use:
-
-Remove all images
-
-  docker rmi $(docker images -qf "dangling=true")
-  docker rmi $(docker images -q)
+<h2><b> removing images and containers </b></h2>
+<b>containers </b>
 Kill containers and remove them:
 
-  	docker rm $(docker kill $(docker ps -aq))
-Note: Replace kill with stop for graceful shutdown
+	docker rm $(docker kill $(docker ps -aq))
 
-Remove all images except "my-image"
+<b>images</b>
+
+	#removes a specific image
+	docker rmi the_image     
+	
+However, if you need to remove multiple you could use:
+Remove all images
+
+ 	docker rmi $(docker images -qf "dangling=true")
+ 	docker rmi $(docker images -q)
 
 You could use grep to remove all except my-image and ubuntu
 
   	docker rmi $(docker images | grep -v 'ubuntu\|my-image' | awk {'print $3'})
+  	
+Note: Replace kill with stop for graceful shutdown
+
+
+
+
