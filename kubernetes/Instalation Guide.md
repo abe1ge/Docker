@@ -9,8 +9,13 @@ you have to be a root user to run the following lines, you can do so by runnig t
 
 
 	curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+	
 	echo deb http://apt.kubernetes.io/ kubernetes-xenial main  >> /etc/apt/sources.list.d/kubernetes.list
+	
 	apt-get update
+	
  	Install docker if you don't have it already.
+	
  	apt-get install -y docker.io
+	
  	apt-get install -y kubelet kubeadm kubectl kubernetes-cni
