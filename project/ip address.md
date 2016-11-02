@@ -44,16 +44,6 @@ You could use grep to remove all except my-image and ubuntu
   	
 Note: Replace kill with stop for graceful shutdown
 
-<li> this is one
-<li> this is two
-<li> this is three
-<li>
-asdfasdfadsfa
-
-asdfasdfasd
-
-asdfasdfaadf
-</li>
 
 
 
