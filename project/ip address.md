@@ -2,6 +2,7 @@ ntn: 52.212.124.65
 academy
 abel: 52.212.191.25
 
+<b> add user to rute </b>
 	sudo usermod -aG docker ubuntu
 
 	sudo docker run -d -i -t ubuntu bash
