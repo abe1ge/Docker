@@ -5,8 +5,9 @@ this installtion is taken from http://kubernetes.io/docs/getting-started-guides/
 
 The official website recomands that you install kubernetes on <b>16.04, CentOS 7 or HypriotOS v1.0.1</b>. it is possiable to install on later versions of ubuntu and other OSs but further work may be required. The website also recommand that the machine kubernetes is being installed on has a minimum of 1GB ram, 
 <h2> Installing on ubuntu 16.04</h2>
-you have to be a root user to run the following lines, you can do so by runnig the following code su 
+you have to be a root user to run the following lines, you can do so by runnig 'sudu su -'
 
+	sudu su -
 
 	curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 	
