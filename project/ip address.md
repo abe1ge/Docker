@@ -15,7 +15,7 @@ a specific app:
 	apt-get remove <app>
 find all installed apps downloaded after a certin date:
 
-	grep "2015-12-19.*.install " /var/log/dpkg.log | awk '{ print $4 }' | cut -d: -f1
+	grep "2016-11-02.*.install " /var/log/dpkg.log | awk '{ print $4 }' | cut -d: -f1
 removing them :
 
 	sudo apt-get purge app1 app2
