@@ -2,6 +2,9 @@ ntn: 52.212.124.65
 academy
 abel: 52.210.229.150
 
+See what is using a specfic port
+
+	sudo lsof -i :8080
 <b> add user to rute </b>
 	
 	sudo usermod -aG docker ubuntu
