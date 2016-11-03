@@ -22,3 +22,31 @@ you have to be a root user to run the following lines, you can do so by runnig '
 	$ Install docker if you don't have it already.
 	$ apt-get install -y docker.io
 	$ apt-get install -y kubelet kubeadm kubectl kubernetes-cni
+
+
+Now to initialise you master you run kubeadm init:
+	
+	$ kubeadm init
+the output will look something like this
+
+	<master/tokens> generated token: "9aa8bd.31a3aa77563aa931"
+	<master/pki> created keys and certificates in "/etc/kubernetes/pki"
+	<util/kubeconfig> created "/etc/kubernetes/admin.conf"
+	<util/kubeconfig> created "/etc/kubernetes/kubelet.conf"
+	<master/apiclient> created API client configuration
+	<master/apiclient> created API client, waiting for the control plane to become ready
+	<master/apiclient> all control plane components are healthy after 24.910032 seconds
+	<master/apiclient> waiting for at least one node to register and become ready
+	<master/apiclient> first node is ready after 6.002629 seconds
+	<master/discovery> created essential addon: kube-discovery, waiting for it to become ready
+	<master/discovery> kube-discovery is ready after 10.502503 seconds
+	<master/addons> created essential addon: kube-proxy
+	<master/addons> created essential addon: kube-dns
+
+	Kubernetes master initialised successfully!
+
+	You can now join any number of machines by running the following on each node:
+
+	kubeadm join --token 9aa8bd.31a3aa77563aa931 172.31.1.61
+	
+Make a record of the kubeadm join command that kubeadm init outputs. You will need this in a moment. The key included here is secret, keep it safe — anyone with this key can add authenticated nodes to your cluster.
