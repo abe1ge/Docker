@@ -1,6 +1,6 @@
 
 
-# Installing Kubernetes
+# Installing Kubernetes on ubuntu 16.04
 
 this installtion guide is following the offical instalation guide found on the kubernetes website. I have detailed my personl experince and what i thought was relevent but if you perfer a more detailed tutorial go to http://kubernetes.io/docs/getting-started-guides/kubeadm/   
 <h3> Requirements </h3>
@@ -12,7 +12,7 @@ If you are running ubuntu 14.04 and want to upgrade to the latest version, you c
 
 	$ sudo apt-get install update-manager-core
 	$ sudo do-release-upgrade
-<h2> Step 01: Installing on ubuntu 16.04</h2>
+<h2> Step 01: Installing kubernetes</h2>
 you have to be a root user to run the following lines, you can do so by runnig 'sudu su -'
 
 	$ sudu su -
