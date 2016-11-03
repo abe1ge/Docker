@@ -54,4 +54,4 @@ Make a record of the kubeadm join command that kubeadm init outputs. You will ne
 <h2> Installing a pod network </h2>
 It is necessary to do this before you try to deploy any applications to your cluster, and before kube-dns will start up. Note also that kubeadm only supports CNI based networks and therefore kubenet based networks will not work.
 
-There are currently four project you can use to set up your pod network, for this project we will be using Weave Net but other projects can be found <a href="http://kubernetes.io/docs/admin/addons/">here</a> 
+There are currently four project you can use to set up your pod network, for this project we will be using Weave Net but other projects can be found <a href="http://kubernetes.io/docs/admin/addons/" target="_blank">here</a> 
