@@ -1,4 +1,6 @@
-<h1> Installing Kubernetes </h1>
+
+
+# Installing Kubernetes
 
 this installtion is taken from http://kubernetes.io/docs/getting-started-guides/kubeadm/  
 <h3> Requirements </h3>
