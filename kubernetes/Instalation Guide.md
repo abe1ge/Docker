@@ -56,3 +56,5 @@ It is necessary to do this before you try to deploy any applications to your clu
 
 There are currently four project you can use to set up your pod network, for this project we will be using Weave Net but other projects can be found <a href="http://kubernetes.io/docs/admin/addons/" target="_blank">here</a> 
 <a href="http://kubernetes.io/docs/admin/addons/" target="_blank">Link</a>
+
+<a href="http://www.w3schools.com" target="_blank">Visit W3Schools</a>
