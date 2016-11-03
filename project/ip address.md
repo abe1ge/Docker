@@ -19,6 +19,17 @@ find all installed apps downloaded after a certin date:
 removing them :
 
 	sudo apt-get purge app1 app2
+	
+<h3> searching for a word in a document </h3>
+
+	grep 'word' filename
+	grep 'word' file1 file2 file3
+	grep 'string1 string2'  filename
+	cat otherfile | grep 'something'
+	command | grep 'something'
+	command option1 | grep 'data'
+	grep --color 'data' fileName
+
 <h1> Docker command </h1>
 
 	sudo docker run -d -i -t ubuntu bash
