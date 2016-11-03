@@ -22,6 +22,7 @@ removing them :
 	
 <h3> searching for a word in a document </h3>
 
+	grep installed /var/log/dpkg.log
 	grep 'word' filename
 	grep 'word' file1 file2 file3
 	grep 'string1 string2'  filename
