@@ -12,7 +12,7 @@ If you are running ubuntu 14.04 and want to upgrade to the latest version, you c
 
 	$ sudo apt-get install update-manager-core
 	$ sudo do-release-upgrade
-<h2> Installing on ubuntu 16.04</h2>
+<h2> Step 01: Installing on ubuntu 16.04</h2>
 you have to be a root user to run the following lines, you can do so by runnig 'sudu su -'
 
 	$ sudu su -
@@ -51,13 +51,14 @@ the output will look something like this
 	
 Make a record of the kubeadm join command that kubeadm init outputs. You will need this in a moment. The key included here is secret, keep it safe — anyone with this key can add authenticated nodes to your cluster.
 
-<h2> Installing a pod network </h2>
+<h2> Step 02: Installing a pod network </h2>
 It is necessary to do this before you try to deploy any applications to your cluster, and before kube-dns will start up. Note also that kubeadm only supports CNI based networks and therefore kubenet based networks will not work.
 
 There are currently four project you can use to set up your pod network, for this project we will be using <a href="https://github.com/weaveworks/weave-kube">Weave Net</a> but other projects can be found <a href="http://kubernetes.io/docs/admin/addons/" target="_blank">here</a> 
 to install Weave Net pod network run the following command
 
 	kubectl create -f https://git.io/weave-kube
+	
 	
 
 
