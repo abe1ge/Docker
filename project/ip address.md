@@ -7,13 +7,13 @@ abel: 52.210.229.150
 	sudo usermod -aG docker ubuntu
 	
 <h3> uninstalling files </h3>
-:a specific app
+a specific app:
 
 	apt-get remove <app>
-:find all installed apps downloaded after a certin date
+find all installed apps downloaded after a certin date:
 
 	grep "2015-12-19.*.install " /var/log/dpkg.log | awk '{ print $4 }' | cut -d: -f1
-:removing them 
+removing them :
 
 	sudo apt-get purge app1 app2
 <h1> Docker command </h1>
