@@ -2,7 +2,7 @@
 
 # Installing Kubernetes
 
-this installtion is taken from http://kubernetes.io/docs/getting-started-guides/kubeadm/  
+this installtion guide is following the offical instalation guide found on the kubernetes website. I have detailed my personl experince and what i thought was relevent but if you perfer a more detailed tutorial go to http://kubernetes.io/docs/getting-started-guides/kubeadm/   
 <h3> Requirements </h3>
 
 The official website recomands that you install kubernetes on <b>16.04, CentOS 7 or HypriotOS v1.0.1</b>. it is possiable to install on later versions of ubuntu and other OSs but further work may be required. The website also recommand that the machine kubernetes is being installed on has a minimum of 1GB ram, 
@@ -50,3 +50,8 @@ the output will look something like this
 	kubeadm join --token 9aa8bd.31a3aa77563aa931 172.31.1.61
 	
 Make a record of the kubeadm join command that kubeadm init outputs. You will need this in a moment. The key included here is secret, keep it safe — anyone with this key can add authenticated nodes to your cluster.
+
+<h2> Installing a pod network </h2>
+It is necessary to do this before you try to deploy any applications to your cluster, and before kube-dns will start up. Note also that kubeadm only supports CNI based networks and therefore kubenet based networks will not work.
+
+There are currently four project you can use to set up your pod network, for this project we will be using Weave Net but other projects can be found <a href="http://kubernetes.io/docs/admin/addons/">here</a> 
