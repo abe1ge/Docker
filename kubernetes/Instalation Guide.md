@@ -63,7 +63,19 @@ to install Weave Net pod network run the following command
 
 <h2> step 03: seeing if everything is running correctly </h2>
 
-	kubectl get pods --all-namespaces
+	$ kubectl get pods --all-namespaces
+	NAMESPACE     NAME                                     READY     STATUS    RESTARTS   AGE
+	default       kubernetes-bootcamp-390780338-j2tka      0/1       Pending   0          3d
+	kube-system   etcd-ip-172-31-1-61                      1/1       Running   1          3d
+	kube-system   kube-apiserver-ip-172-31-1-61            1/1       Running   1          3d
+	kube-system   kube-controller-manager-ip-172-31-1-61   1/1       Running   1          3d
+	kube-system   kube-discovery-982812725-y4jiu           1/1       Running   1          3d
+	kube-system   kube-dns-2247936740-9zlri                3/3       Running   3          3d
+	kube-system   kube-proxy-amd64-s1gt1                   1/1       Running   1          3d
+	kube-system   kube-scheduler-ip-172-31-1-61            1/1       Running   1          3d
+	kube-system   weave-net-r2oju                          2/2       Running   2          3d
+
+	
 
 
 
