@@ -61,5 +61,9 @@ to install Weave Net pod network run the following command
 	
 	
 
+<h2> step 03: seeing if everything is running correctly </h2>
+
+	kubectl get pods --all-namespaces
+
 
 
