@@ -3,10 +3,13 @@ MAINTAINER "abel" abe1ge@github.com
 
 RUN apt-get update
 
-RUN apt-get install wget -y
+#install dependencies 
+RUN apt-get install wget maven -y
 
+#getting the key
 RUN wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
 
+#allow jenkins to be installed
 RUN sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 
 RUN sudo apt-get update -y
