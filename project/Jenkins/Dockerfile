@@ -14,6 +14,9 @@ WORKDIR /opt/jdk1.8.0_45/
 RUN update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_45/bin/java 100
 RUN update-alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_45/bin/javac 100
 
+RUN export JAVA_HOME=/opt/jdk1.8.0_45/
+
+
 #getting the key
 RUN wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
 
