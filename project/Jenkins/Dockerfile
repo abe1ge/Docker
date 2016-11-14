@@ -6,15 +6,9 @@ RUN apt-get update
 #install dependencies 
 RUN apt-get install wget maven -y
 
-#installing java 1.8.0_45
-WORKDIR /opt/
-RUN sudo wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-linux-x64.tar.gz"
-RUN sudo tar -zxvf jdk-8u45-linux-x64.tar.gz
-WORKDIR /opt/jdk1.8.0_45/
-RUN update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_45/bin/java 100
-RUN update-alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_45/bin/javac 100
-
-RUN export JAVA_HOME=/opt/jdk1.8.0_45/
+#installing the latest  jdk and jre
+RUN sudo apt install -y openjdk-8-jre-headless
+RUN export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 
 
 
 #getting the key
