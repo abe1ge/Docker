@@ -20,6 +20,10 @@ removing them :
 
 	sudo apt-get purge app1 app2
 	
+see all ip address used by containers
+
+	docker ps -q | xargs docker inspect | grep IPAddress | cut -d '"' -f 4
+
 <h3> searching for a word in a document </h3>
 
 	grep installed /var/log/dpkg.log
