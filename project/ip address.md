@@ -1,6 +1,5 @@
-ntn: 52.212.124.65
-academy
-abel: 52.210.229.150
+good totrail on docker
+https://blog.codecentric.de/en/2014/01/lightweight-virtual-machines-made-simple-docker-run-100-virtual-maschines/
 
 See what is using a specfic port
 
