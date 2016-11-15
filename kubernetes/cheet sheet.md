@@ -35,12 +35,25 @@ the name in most cases is the FQDN of your machine. currently there is no nodes 
 
 	kubeadm join --token <token> <master-ip>
 	
-<h2> Deploying your first app </h2>
+<h2> Deploying your first container </h2>
 
-running an app in kuberneties is much like running a container with docker it self.
+deploying an container in kuberneties is much like running a container with docker.
 
 	kubectl run <app name> --image-<image> --port=<port>
 	
-to start with we are going to deploy an app using the image ubuntu. 
-	kubectl run ubuntu --image=ubuntu 
+to start with we are going to deploy an container using the image ubuntu. 
+	
+	$ kubectl run ubuntu --image=ubuntu 
+	deployment "ubuntu" created
+
+Now that we have deployed an container we want to see all our deployments. this is done with get deploy
+
+	$ kubectl get deploy
+	NAME                  DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE         
+	ubuntu                1         1         1            1           3m   
+
+You have to remember that by defult that kuberneties does not deploy any container on the master machines therefore if you do not have any nodes the container would not be available and under the available heading it would be 0, if it is not possiable for you to be to connect a node, taint the master using the commands showen above.
+
+When you deploy an container, a pod is automaticly created and that container is put into that pod. you can see how 
+
 	
