@@ -2,7 +2,9 @@
 
 # Installing Kubernetes on ubuntu 16.04
 
-this installtion guide is following the offical instalation guide found on the kubernetes website. I have detailed my personl experince and what i thought was relevent but if you perfer a more detailed tutorial go to http://kubernetes.io/docs/getting-started-guides/kubeadm/   
+this installtion guide is following the offical instalation guide found on the kubernetes website. I have detailed my personl experince and what i thought was relevent but if you perfer a more detailed tutorial go to http://kubernetes.io/docs/getting-started-guides/kubeadm/ 
+
+at the end of the above website website there is a little exersise to get you statred. 
 <h3> Requirements </h3>
 
 The official website recomands that you install kubernetes on <b>16.04, CentOS 7 or HypriotOS v1.0.1</b>. it is possiable to install on later versions of ubuntu and other OSs but further work may be required. The website also recommand that the machine kubernetes is being installed on has a minimum of 1GB ram, 
