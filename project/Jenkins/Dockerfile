@@ -21,4 +21,4 @@ RUN apt-get update -y
 
 RUN apt-get install jenkins -y
 
-ENTRYPOINT service jenkins start && bash
+ENTRYPOINT service jenkins start && tail /var/lib/jenkins/secrets/initialAdminPassword && bash
