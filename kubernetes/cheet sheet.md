@@ -109,6 +109,5 @@ Now if you want to get the logs for pod2 all you need to run is
 
 To go inside a container is exactly the same as you would in docker
 
-
+	kubectl exec -ti $POD_NAME bash
 	
-
